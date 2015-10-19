@@ -87,18 +87,58 @@ io.on('connection', function (socket) {
 		switch (state){
 		case 22:
 			console.log("前進");
+			exec('echo 1 > /sys/class/gpio/gpio18/value');
+			exec('echo 0 > /sys/class/gpio/gpio23/value');
+			exec('echo 1 > /sys/class/gpio/gpio4/value');
+			exec('echo 0 > /sys/class/gpio/gpio27/value');
+			exec('echo 1 > /sys/class/gpio/gpio25/value');
+			exec('echo 0 > /sys/class/gpio/gpio7/value');
+			exec('echo 1 > /sys/class/gpio/gpio10/value');
+			exec('echo 0 > /sys/class/gpio/gpio11/value');
 			break;
 		case 11:
 			console.log("後退");
+			exec('echo 0 > /sys/class/gpio/gpio18/value');
+			exec('echo 1 > /sys/class/gpio/gpio23/value');
+			exec('echo 0 > /sys/class/gpio/gpio4/value');
+			exec('echo 1 > /sys/class/gpio/gpio27/value');
+			exec('echo 0 > /sys/class/gpio/gpio25/value');
+			exec('echo 1 > /sys/class/gpio/gpio7/value');
+			exec('echo 0 > /sys/class/gpio/gpio10/value');
+			exec('echo 1 > /sys/class/gpio/gpio11/value');
 			break;
 		case 21:
 			console.log("右旋回");
+			exec('echo 1 > /sys/class/gpio/gpio18/value');
+			exec('echo 0 > /sys/class/gpio/gpio23/value');
+			exec('echo 0 > /sys/class/gpio/gpio4/value');
+			exec('echo 1 > /sys/class/gpio/gpio27/value');
+			exec('echo 1 > /sys/class/gpio/gpio25/value');
+			exec('echo 0 > /sys/class/gpio/gpio7/value');
+			exec('echo 0 > /sys/class/gpio/gpio10/value');
+			exec('echo 1 > /sys/class/gpio/gpio11/value');
 			break;
 		case 12:
 			console.log("左旋回");
+			exec('echo 0 > /sys/class/gpio/gpio18/value');
+			exec('echo 1 > /sys/class/gpio/gpio23/value');
+			exec('echo 1 > /sys/class/gpio/gpio4/value');
+			exec('echo 0 > /sys/class/gpio/gpio27/value');
+			exec('echo 0 > /sys/class/gpio/gpio25/value');
+			exec('echo 1 > /sys/class/gpio/gpio7/value');
+			exec('echo 1 > /sys/class/gpio/gpio10/value');
+			exec('echo 0 > /sys/class/gpio/gpio11/value');
 			break;
 		case 11:
 			console.log("停止");
+			exec('echo 0 > /sys/class/gpio/gpio18/value');
+			exec('echo 0 > /sys/class/gpio/gpio23/value');
+			exec('echo 0 > /sys/class/gpio/gpio4/value');
+			exec('echo 0 > /sys/class/gpio/gpio27/value');
+			exec('echo 0 > /sys/class/gpio/gpio25/value');
+			exec('echo 0 > /sys/class/gpio/gpio7/value');
+			exec('echo 0 > /sys/class/gpio/gpio10/value');
+			exec('echo 0 > /sys/class/gpio/gpio11/value');
 			break;
 }
 		
