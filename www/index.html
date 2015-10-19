@@ -48,6 +48,17 @@ $(document).ready(function(){
 function IO18n(btnNo){
 	
 }
+
+var slider = doc.querySelector("[type=range]");
+    
+slider.addEventListener("input", function() {
+    // ドラッグ中のイベント
+}, false);
+
+slider.addEventListener("change", function() {
+    // マウスアップした際のイベント
+	socket.emit('speed',this.value);
+}, false);
 	
 
 	</script>
@@ -75,9 +86,8 @@ function IO18n(btnNo){
 		<input type="button" name="停止" value="停止" onClick="socket.emit('state',1);">
 		
 		
-		<label>レンジ（type="range"）:<input type="range" name="range"></label>
-		<input type="submit" value="送信">
-		</form>
+		<input type="range" value="0" min="0" max="100" step="1" />
+		
 	</form>
 	</p>
 	

@@ -58,6 +58,13 @@ io.on('connection', function (socket) {
 		
 	});
 	
+	socket.on("speed", function (speed) {
+
+			console.log(speed);
+
+		
+	});
+	
 	
 	
 });
