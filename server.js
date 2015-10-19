@@ -37,11 +37,23 @@ io.on('connection', function (socket) {
 	socket.on("IO18", function (IO18) {
 		if(IO18==1){
 			exec('echo 1 > /sys/class/gpio/gpio18/value');
-			console.log("ONされました．");
+			console.log("18がONされました．");
 		}
 		else{
 			exec('echo 0 > /sys/class/gpio/gpio18/value');
-			console.log("OFFされました．");
+			console.log("18がOFFされました．");
+		}
+		
+	});
+	
+	socket.on("IO17", function (IO17) {
+		if(IO17==1){
+			exec('echo 1 > /sys/class/gpio/gpio17/value');
+			console.log("17がONされました．");
+		}
+		else{
+			exec('echo 0 > /sys/class/gpio/gpio17/value');
+			console.log("17がOFFされました．");
 		}
 		
 	});

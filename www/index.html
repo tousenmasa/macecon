@@ -61,8 +61,11 @@ function IO18n(btnNo){
 	
 	<p>
 	<form name="test">
-		<input type="button" name="GPIO18ON" value="GPIO18ON" onClick="socket.emit('IO18',1);">
-		<input type="button" name="GPIO18OFF" value="GPIO18OFF" onClick="socket.emit('IO18',0);">
+		<input type="button" name="GPIO18<ON>" value="GPIO18ON" onClick="socket.emit('IO18',1);">
+		<input type="button" name="GPIO18<OFF>" value="GPIO18OFF" onClick="socket.emit('IO18',0);">
+		
+		<input type="button" name="GPIO17<ON>" value="GPIO17ON" onClick="socket.emit('IO17',1);">
+		<input type="button" name="GPIO17<OFF>" value="GPIO17OFF" onClick="socket.emit('IO17',0);">
 	</form>
 	</p>
 	
