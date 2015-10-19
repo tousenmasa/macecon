@@ -46,14 +46,14 @@ io.on('connection', function (socket) {
 		
 	});
 	
-	socket.on("IO17", function (IO17) {
+	socket.on("IO23", function (IO17) {
 		if(IO17==1){
-			exec('echo 1 > /sys/class/gpio/gpio17/value');
-			console.log("17がONされました．");
+			exec('echo 1 > /sys/class/gpio/gpio23/value');
+			console.log("23がONされました．");
 		}
 		else{
-			exec('echo 0 > /sys/class/gpio/gpio17/value');
-			console.log("17がOFFされました．");
+			exec('echo 0 > /sys/class/gpio/gpio23/value');
+			console.log("23がOFFされました．");
 		}
 		
 	});
