@@ -22,6 +22,24 @@ exec('echo out > /sys/class/gpio/gpio18/direction');
 exec('echo 23 > /sys/class/gpio/export');
 exec('echo out > /sys/class/gpio/gpio23/direction');
 
+exec('echo 4 > /sys/class/gpio/export');
+exec('echo out > /sys/class/gpio/gpio4/direction');
+
+exec('echo 27 > /sys/class/gpio/export');
+exec('echo out > /sys/class/gpio/gpio27/direction');
+
+exec('echo 25 > /sys/class/gpio/export');
+exec('echo out > /sys/class/gpio/gpio25/direction');
+
+exec('echo 7 > /sys/class/gpio/export');
+exec('echo out > /sys/class/gpio/gpio7/direction');
+
+exec('echo 10 > /sys/class/gpio/export');
+exec('echo out > /sys/class/gpio/gpio10/direction');
+
+exec('echo 11 > /sys/class/gpio/export');
+exec('echo out > /sys/class/gpio/gpio11/direction');
+
 
 app.get('/on', function(req, res) {
 	res.writeHead(200, {"Content-Type": "text/html","Access-Control-Allow-Origin":"*"});
@@ -66,14 +84,23 @@ io.on('connection', function (socket) {
 	});
 	
 	socket.on("state", function (state) {
-		if(state==11){
-			exec('echo 1 > /sys/class/gpio/gpio23/value');
-			console.log("23がONされました．");
-		}
-		else{
-			exec('echo 0 > /sys/class/gpio/gpio23/value');
-			console.log("23がOFFされました．");
-		}
+		switch (state){
+		case 22:
+			console.log("前進");
+			break;
+		case 11:
+			console.log("後退");
+			break;
+		case 21:
+			console.log("右旋回");
+			break;
+		case 12:
+			console.log("左旋回");
+			break;
+		case 11:
+			console.log("停止");
+			break;
+}
 		
 	});
 	
