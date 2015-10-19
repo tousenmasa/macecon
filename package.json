@@ -1,0 +1,25 @@
+{
+  "name": "macecon",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tousenmasa/macecon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tousenmasa/macecon/issues"
+  },
+  "homepage": "https://github.com/tousenmasa/macecon",
+  "dependencies": {
+    "express": "~4.13.3",
+    "nodemon": "~1.7.2",
+    "socket.io": "~1.3.7"
+  }
+}
