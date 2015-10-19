@@ -79,11 +79,11 @@ function range(range){
 		<input type="button" name="GPIO23OFF" value="GPIO23OFF" onClick="socket.emit('IO23',0);">
 		-->
 		
-		<input type="button" name="zensin" value="前進" onClick="socket.emit('state',22);">
-		<input type="button" name="koutai" value="後退" onClick="socket.emit('state',11);">
-		<input type="button" name="migisen" value="右旋回" onClick="socket.emit('state',21);">
-		<input type="button" name="hidarisen" value="左旋回" onClick="socket.emit('state',12);">
-		<input type="button" name="stop" value="停止" onClick="socket.emit('state',00);">
+		<p><input type="button" name="zensin" value="前進" onClick="socket.emit('state',22);  "style="WIDTH: 200px; HEIGHT: 100px"></p>
+		<p><input type="button" name="koutai" value="後退" onClick="socket.emit('state',11);"style="WIDTH: 200px; HEIGHT: 100px"></p>
+		<p><input type="button" name="migisen" value="右旋回" onClick="socket.emit('state',21);"style="WIDTH: 200px; HEIGHT: 100px"></p>
+		<p><input type="button" name="hidarisen" value="左旋回" onClick="socket.emit('state',12);"style="WIDTH: 200px; HEIGHT: 100px"></p>
+		<p><input type="button" name="stop" value="停止" onClick="socket.emit('state',00);"style="WIDTH: 200px; HEIGHT: 100px"></p>
 		
 		
 		<input type="range" value="0" min="0" max="100" step="1" />
