@@ -47,13 +47,33 @@ $(document).ready(function(){
 });
 
 	</script>
-
+var chatSocket = io.connect("http://"+location.host.split(":")[0]+":8081");
 	</head>
 
 <!-- ここまでヘッダー情報 -->
 
+</script>
 <body>
+	
+	<p>
+	<form name="test">
+		<input type="button" name="GPIO18ON" value="GPIO18ON" onClick="kakunin(1)">
+		<input type="button" name="GPIO18OFF" value="GPIO18OFF" onClick="kakunin(2)">
+	</form>
+	</p>
 
 </body>
+<script type="text/javascript">
+var chatSocket = io.connect("http://"+location.host.split(":")[0]+":8081");
+	function kakunin(btnNo){
+	if (btnNo == 1){
+		chatSocket.emit('text', 1);
+	}else{
+		chatSocket.emit('text', 10;
+	}
+	
+	
+</script>
+
 
 </html>
