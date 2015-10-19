@@ -35,9 +35,11 @@ io.on('connection', function (socket) {
 	socket.on("text", function (data) {
 		if(data==1){
 			exec('echo 1 > /sys/class/gpio/gpio18/value');
+			console.log("ON");
 		}
 		else{
 			exec('echo 0 > /sys/class/gpio/gpio18/value');
+			console.log("OFF");
 		}
 		
 	});
