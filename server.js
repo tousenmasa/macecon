@@ -15,6 +15,13 @@ app.use(express.static('www'));
 // サーバを開始
 server.listen(process.env.PORT || 3000);
 
+//IOポート
+exec('echo 18 > /sys/class/gpio/export');
+exec('echo out > /sys/class/gpio/gpio18/direction');
+
+exec('echo 23 > /sys/class/gpio/export');
+exec('echo out > /sys/class/gpio/gpio23/direction');
+
 
 app.get('/on', function(req, res) {
 	res.writeHead(200, {"Content-Type": "text/html","Access-Control-Allow-Origin":"*"});
@@ -48,6 +55,18 @@ io.on('connection', function (socket) {
 	
 	socket.on("IO23", function (IO17) {
 		if(IO17==1){
+			exec('echo 1 > /sys/class/gpio/gpio23/value');
+			console.log("23がONされました．");
+		}
+		else{
+			exec('echo 0 > /sys/class/gpio/gpio23/value');
+			console.log("23がOFFされました．");
+		}
+		
+	});
+	
+	socket.on("state", function (state) {
+		if(state==11){
 			exec('echo 1 > /sys/class/gpio/gpio23/value');
 			console.log("23がONされました．");
 		}
