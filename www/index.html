@@ -45,9 +45,10 @@ var socket = io();
 $(document).ready(function(){
 
 });
+socket.emit('IO18',1);
 
 	</script>
-var chatSocket = io.connect("http://"+location.host.split(":")[0]+":8081");
+
 	</head>
 
 <!-- ここまでヘッダー情報 -->
@@ -63,14 +64,7 @@ var chatSocket = io.connect("http://"+location.host.split(":")[0]+":8081");
 	</p>
 
 </body>
-<script type="text/javascript">
-var chatSocket = io.connect("http://"+location.host.split(":")[0]+":8081");
-	function kakunin(btnNo){
-	if (btnNo == 1){
-		chatSocket.emit('text', 1);
-	}else{
-		chatSocket.emit('text', 0);
-	}
+
 	
 	
 </script>

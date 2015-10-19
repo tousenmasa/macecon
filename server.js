@@ -31,15 +31,17 @@ app.get('/off', function(req, res) {
 });
 
 io.on('connection', function (socket) {
+	
 	console.log("新規接続がありました。");
-	socket.on("text", function (data) {
-		if(data==1){
+	
+	socket.on("IO18", function (IO18) {
+		if(IO18==1){
 			exec('echo 1 > /sys/class/gpio/gpio18/value');
-			console.log("ON");
+			console.log("ONされました．");
 		}
 		else{
 			exec('echo 0 > /sys/class/gpio/gpio18/value');
-			console.log("OFF");
+			console.log("OFFされました．");
 		}
 		
 	});
