@@ -129,7 +129,7 @@ io.on('connection', function (socket) {
 			exec('echo 1 > /sys/class/gpio/gpio10/value');
 			exec('echo 0 > /sys/class/gpio/gpio11/value');
 			break;
-		case 00:
+		case 0:
 			console.log("停止");
 			exec('echo 0 > /sys/class/gpio/gpio18/value');
 			exec('echo 0 > /sys/class/gpio/gpio23/value');
