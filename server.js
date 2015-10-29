@@ -43,6 +43,7 @@ exec('echo out > /sys/class/gpio/gpio11/direction');
 
 
 
+
 io.on('connection', function (socket) {
 	
 	console.log("新規接続がありました。");
