@@ -41,35 +41,11 @@ exec('echo 11 > /sys/class/gpio/export');
 exec('echo out > /sys/class/gpio/gpio11/direction');
 
 
-app.get('/on', function(req, res) {
-	res.writeHead(200, {"Content-Type": "text/html","Access-Control-Allow-Origin":"*"});
-	res.write("ON");
-   	res.end();
-	exec('echo 1 > /sys/class/gpio/gpio18/value');
-});
 
-app.get('/off', function(req, res) {
-	res.writeHead(200, {"Content-Type": "text/html","Access-Control-Allow-Origin":"*"});
-	res.write("OFF");
-   	res.end();
-	exec('echo 0 > /sys/class/gpio/gpio18/value');
-});
 
 io.on('connection', function (socket) {
 	
 	console.log("新規接続がありました。");
-	
-	socket.on("IO18", function (IO18) {
-		if(IO18==1){
-			exec('echo 1 > /sys/class/gpio/gpio18/value');
-			console.log("18がONされました．");
-		}
-		else{
-			exec('echo 0 > /sys/class/gpio/gpio18/value');
-			console.log("18がOFFされました．");
-		}
-		
-	});
 	
 	socket.on("IO23", function (IO17) {
 		if(IO17==1){
@@ -91,10 +67,6 @@ io.on('connection', function (socket) {
 			exec('echo 0 > /sys/class/gpio/gpio23/value');
 			exec('echo 1 > /sys/class/gpio/gpio4/value');
 			exec('echo 0 > /sys/class/gpio/gpio27/value');
-			exec('echo 1 > /sys/class/gpio/gpio25/value');
-			exec('echo 0 > /sys/class/gpio/gpio7/value');
-			exec('echo 1 > /sys/class/gpio/gpio10/value');
-			exec('echo 0 > /sys/class/gpio/gpio11/value');
 			break;
 		case 11:
 			console.log("後退");
@@ -102,10 +74,6 @@ io.on('connection', function (socket) {
 			exec('echo 1 > /sys/class/gpio/gpio23/value');
 			exec('echo 0 > /sys/class/gpio/gpio4/value');
 			exec('echo 1 > /sys/class/gpio/gpio27/value');
-			exec('echo 0 > /sys/class/gpio/gpio25/value');
-			exec('echo 1 > /sys/class/gpio/gpio7/value');
-			exec('echo 0 > /sys/class/gpio/gpio10/value');
-			exec('echo 1 > /sys/class/gpio/gpio11/value');
 			break;
 		case 21:
 			console.log("右旋回");
@@ -113,10 +81,6 @@ io.on('connection', function (socket) {
 			exec('echo 0 > /sys/class/gpio/gpio23/value');
 			exec('echo 0 > /sys/class/gpio/gpio4/value');
 			exec('echo 1 > /sys/class/gpio/gpio27/value');
-			exec('echo 1 > /sys/class/gpio/gpio25/value');
-			exec('echo 0 > /sys/class/gpio/gpio7/value');
-			exec('echo 0 > /sys/class/gpio/gpio10/value');
-			exec('echo 1 > /sys/class/gpio/gpio11/value');
 			break;
 		case 12:
 			console.log("左旋回");
@@ -124,10 +88,6 @@ io.on('connection', function (socket) {
 			exec('echo 1 > /sys/class/gpio/gpio23/value');
 			exec('echo 1 > /sys/class/gpio/gpio4/value');
 			exec('echo 0 > /sys/class/gpio/gpio27/value');
-			exec('echo 0 > /sys/class/gpio/gpio25/value');
-			exec('echo 1 > /sys/class/gpio/gpio7/value');
-			exec('echo 1 > /sys/class/gpio/gpio10/value');
-			exec('echo 0 > /sys/class/gpio/gpio11/value');
 			break;
 		case 0:
 			console.log("停止");
@@ -135,10 +95,6 @@ io.on('connection', function (socket) {
 			exec('echo 0 > /sys/class/gpio/gpio23/value');
 			exec('echo 0 > /sys/class/gpio/gpio4/value');
 			exec('echo 0 > /sys/class/gpio/gpio27/value');
-			exec('echo 0 > /sys/class/gpio/gpio25/value');
-			exec('echo 0 > /sys/class/gpio/gpio7/value');
-			exec('echo 0 > /sys/class/gpio/gpio10/value');
-			exec('echo 0 > /sys/class/gpio/gpio11/value');
 			break;
 }
 		
